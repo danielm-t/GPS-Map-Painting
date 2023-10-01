@@ -12,14 +12,24 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.gps_map_painting.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_view"
+        android:name="com.example.gps_map_painting.ui.viewfriends.ViewFriendsFragment"
+        android:label="@string/menu_view_friends"
+        tools:layout="@layout/fragment_view_friends" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.gps_map_painting.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_shop"
+        android:name="com.example.gps_map_painting.ui.shop.ShopFragment"
+        android:label="@string/menu_spend"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/nav_shareapp"
+        android:name="com.example.gps_map_painting.ui.shareapp.ShareAppFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share_app" />
+    <fragment
+        android:id="@+id/nav_health"
+        android:name="com.example.gps_map_painting.ui.health.HealthFragment"
+        android:label="@string/menu_health"
+        tools:layout="@layout/fragment_health" />
 </navigation>
