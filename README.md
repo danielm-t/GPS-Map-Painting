@@ -1,3 +1,0 @@
-# GPS-Map-Painting
-This project would design and create a mobile app that allows users to paint on a map, based on their smartphone-tracked movements in the physical world. Users could choose when to lift or place their virtual brush on the map canvas, and then draw marks wherever they go. Incentives such as choosing colours or brush size might potentially be tied into achievements such as recent amount of exercise the phone has detected. Multiple users could potentially contribute to the same canvas. The project could explore any privacy issues surrounding this.
-Languages and platforms negotiable: iOS or Android, native Swift/Kotlin/Java or cross-platform React Native/Flutter etc.
