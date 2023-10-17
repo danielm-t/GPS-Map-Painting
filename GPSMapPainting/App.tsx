@@ -1,112 +1,71 @@
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import 'react-native-gesture-handler'
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { DrawerContentComponentProps, createDrawerNavigator } from '@react-navigation/drawer';
+import { DrawerContent} from './src/components/DrawerContent';
+import ShareScreen from './src/screens/ShareScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import HealthScreen from './src/screens/HealthScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function Home(){
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <HomeScreen/>
+  );
+}
+function Health(){
+  return(
+    <HealthScreen/>
+  )
+}
+function Share(){
+  return (
+    <ShareScreen/>
   );
 }
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const Drawer = createDrawerNavigator();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function MyDrawer() {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-          
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits. Wow
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Drawer.Navigator
+    screenOptions={{
+      drawerActiveTintColor: 'black', // Set the color for non-selected items
+    }}
+    drawerContent={(props: DrawerContentComponentProps) => <DrawerContent {...props} />}
+    >
+      
+      <Drawer.Screen name="Home" component={Home}options={{ title:"Home",
+    drawerIcon: ({ color, size }) => (
+      <Icon name="home" size={size} color={color}/>
+    )
+  }}/>
+  <Drawer.Screen name="Health" component={Health}options={{ title:"Health",
+    drawerIcon: ({ color, size }) => (
+      <Icon name="heartbeat" size={size} color={color}/>
+    )
+  }} />
+      <Drawer.Screen name="Share" component={Share}options={{ title:"Share",
+    drawerIcon: ({ color, size }) => (
+      <Icon name="share-alt" size={size} color={color}/>
+    )
+  }} />
+    <Drawer.Screen name="Profile" component={ProfileScreen}options={{ title:"Profile",
+    drawerIcon: ({ color, size }) => (
+      <Icon name="child" size={size} color={color}/>
+    )
+  }} />
+  
+
+    </Drawer.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
+  );
+}

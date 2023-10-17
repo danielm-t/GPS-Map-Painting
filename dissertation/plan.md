@@ -17,8 +17,14 @@ Week-by-week plan for the whole project. Update this as you go along.
 	Research and Implement a step counter
 	Research on Firebase and implement register log-in function
 * **Week 3**
+	Implement the step counter
 * **Week 4**
+	Migrate the current technology stack to React Native
+	Create user personas and user stories
+	Update the wireframes
 * **Week 5**
+	Solidifying the plan for the application functionality
+	Implementing some of the more basic pages (Profile and Share)
 * **Week 6**
 * **Week 7**
 * **Week 8**
