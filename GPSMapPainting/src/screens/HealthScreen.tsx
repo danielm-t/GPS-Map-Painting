@@ -13,7 +13,7 @@ const Value = ({ label, value }: ValueProps) => (
     <Text style={styles.value}>{value}</Text>
   </View>
 );
-function HealthScreen(){
+export default function HealthScreen(){
     const [date, setDate] = useState(new Date());
     const { steps, distance } = useHealthConnect(date);
     return (
@@ -34,4 +34,3 @@ const styles = StyleSheet.create({
       fontWeight: '500',
     },
   });
-export default HealthScreen

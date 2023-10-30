@@ -26,6 +26,7 @@ Week-by-week plan for the whole project. Update this as you go along.
 	Solidifying the plan for the application functionality
 	Implementing some of the more basic pages (Profile and Share)
 * **Week 6**
+	Implementing Log in/ Register Pages
 * **Week 7**
 * **Week 8**
 * **Week 9**

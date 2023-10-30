@@ -90,8 +90,16 @@
 ## 16 Oct 2023
 * *0.5 hours* weekly meeting minutes preparation 
 * *0.5 hours* meeting with the supervisor, demoed the new application layout and the Health Connect setup
-* *3 hours* Implemented a basic version of the user profile page, will have to get feedback from the supervisor
 
 ## 17 Oct 2023
 * *0.5 hours* updated the GitHub with the new code and published meeting minutes.
+
+## 18 Oct 2023
+* *1 hour* finalised the main concept of the application 
+
+## 19 Oct 2023
+* *2 hours* finalised the wireframes for the application and modified the user personas
+
+## 20 Oct 2023
+* *3 hours* Implemented a basic version of the user profile page, will have to get feedback from the supervisor
 

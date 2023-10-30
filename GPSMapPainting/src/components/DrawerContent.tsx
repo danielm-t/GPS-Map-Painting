@@ -3,7 +3,8 @@ import {View, StyleSheet} from 'react-native'
 import {DrawerContentComponentProps, DrawerContentScrollView, DrawerItem,DrawerItemList} from '@react-navigation/drawer'
 import {Avatar,Title,Caption,Drawer,TouchableRipple} from 'react-native-paper'
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { getAuth,signOut } from 'firebase/auth';
+const auth = getAuth();
 export function DrawerContent(props: DrawerContentComponentProps){
     return(
         <View style={{flex:1}}>
@@ -31,7 +32,7 @@ export function DrawerContent(props: DrawerContentComponentProps){
             </View>
         </DrawerContentScrollView>
         <Drawer.Section style={[style.bottomDrawer,{shadowColor: 'transparent'}]}>
-            <DrawerItem label={"Log out"} onPress={()=>{}} icon={({ color, size }) => (<Icon name="sign-out" size={size} color={color} />)} />
+            <DrawerItem label={"Log out"} onPress={()=>{signOut(auth)}} icon={({ color, size }) => (<Icon name="sign-out" size={size} color={color} />)} />
         </Drawer.Section>
         </View>
     )

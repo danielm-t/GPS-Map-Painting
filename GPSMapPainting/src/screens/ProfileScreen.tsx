@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Avatar,Button, Card, Paragraph, Title } from 'react-native-paper';
 
-function ProfileScreen() {
+export default function ProfileScreen() {
 return (
     <View style={{flex: 1}}>
     <View style={style.icon}>
@@ -60,4 +60,3 @@ const style = StyleSheet.create({
     buttons:{marginRight:30,marginLeft:30,marginTop:10,flexDirection: 'row',justifyContent: 'space-between'},
     card:{flex: 1, margin: 10}
 });
-export default ProfileScreen;
